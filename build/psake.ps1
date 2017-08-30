@@ -13,6 +13,7 @@ Properties {
     $PSVersion = $PSVersionTable.PSVersion.Major
     $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
     $lines = '----------------------------------------------------------------------'
+    $Version = $null
 
     $Verbose = @{}
     if($ENV:BHCommitMessage -match "!verbose")
@@ -81,6 +82,7 @@ Task Deploy -Depends Build {
 
     $Params = @{
         Path = "$ProjectRoot\Build"
+        Version = $Version
         Force = $true
         Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
     }
