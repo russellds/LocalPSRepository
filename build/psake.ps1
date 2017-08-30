@@ -1,4 +1,4 @@
-Include ".\helpers\Get-NextNugetPackageCalendarVersion.ps1"
+Include ".\Get-NextNugetPackageCalendarVersion.ps1"
 # PSake makes variables declared here available in other scriptblocks
 # Init some things
 Properties {
