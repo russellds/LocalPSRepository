@@ -82,7 +82,6 @@ Task Deploy -Depends Build {
 
     $Params = @{
         Path = "$ProjectRoot\Build"
-        Version = $Version
         Force = $true
         Recurse = $false # We keep psdeploy artifacts, avoid deploying those : )
     }
