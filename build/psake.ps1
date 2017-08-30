@@ -68,6 +68,7 @@ Task Build -Depends Test {
     {
         $Version = Get-NextNugetPackageCalendarVersion -Name $env:BHProjectName -ErrorAction Stop
         Update-Metadata -Path $env:BHPSModuleManifest -PropertyName ModuleVersion -Value $Version -ErrorAction stop
+        "Version: $($version.ToString())"
     }
     Catch
     {
