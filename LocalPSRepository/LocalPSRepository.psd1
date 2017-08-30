@@ -4,7 +4,7 @@
 RootModule = 'LocalPSRepository.psm1'
 
 # Version number of this module.
-ModuleVersion = '17.8.0'
+ModuleVersion = '17.8.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
