@@ -1,6 +1,9 @@
 ﻿param(
     [string]
-    $Task = 'Default'
+    $Task = 'Default',
+
+    [switch]
+    $Force
 )
 
 # dependencies
@@ -12,7 +15,7 @@ if(-not (Get-Module -ListAvailable PSDepend))
 Import-Module PSDepend
 $null = Invoke-PSDepend -Path "$PSScriptRoot\build.requirements.psd1" -Install -Import -Force
 
-Set-BuildEnvironment
+Set-BuildEnvironment -Force:$Force
 
 Invoke-psake $PSScriptRoot\psake.ps1 -taskList $Task -nologo
 exit ( [int]( -not $psake.build_success ) )
