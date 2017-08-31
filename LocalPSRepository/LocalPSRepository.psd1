@@ -44,7 +44,7 @@ Description = 'Powershell Module to Create a Local Powershell Repository for use
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @('PowerShellGet')
+RequiredModules = @('PowerShellGet')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
