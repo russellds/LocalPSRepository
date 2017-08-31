@@ -1,4 +1,4 @@
-# Generic module deployment.
+﻿# Generic module deployment.
 #
 # ASSUMPTIONS:
 #

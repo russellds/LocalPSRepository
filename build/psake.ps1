@@ -1,4 +1,4 @@
-Include ".\Get-NextNugetPackageCalendarVersion.ps1"
+﻿Include ".\helpers\Get-NextNugetPackageCalendarVersion.ps1"
 # PSake makes variables declared here available in other scriptblocks
 # Init some things
 Properties {
@@ -13,7 +13,6 @@ Properties {
     $PSVersion = $PSVersionTable.PSVersion.Major
     $TestFile = "TestResults_PS$PSVersion`_$TimeStamp.xml"
     $lines = '----------------------------------------------------------------------'
-    $Version = $null
 
     $Verbose = @{}
     if($ENV:BHCommitMessage -match "!verbose")
