@@ -5,7 +5,7 @@
 RootModule = 'LocalPSRepository.psm1'
 
 # Version number of this module.
-ModuleVersion = '17.8.2'
+ModuleVersion = '1.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -44,7 +44,7 @@ Description = 'Powershell Module to Create a Local Powershell Repository for use
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('PowerShellGet')
+# RequiredModules = @('PowerShellGet')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -62,7 +62,7 @@ RequiredModules = @('PowerShellGet')
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = '*'
+FunctionsToExport = @('Find-PSGModule','New-LocalPSRepository','Save-PSGModule')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'

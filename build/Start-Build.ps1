@@ -1,7 +1,8 @@
 ﻿param(
     [string]
     $Task = 'Default',
-
+    [switch]
+    $Local,
     [switch]
     $Force
 )
@@ -16,6 +17,10 @@ Import-Module PSDepend
 $null = Invoke-PSDepend -Path "$PSScriptRoot\build.requirements.psd1" -Install -Import -Force
 
 Set-BuildEnvironment -Force:$Force
+
+if ($Local) {
+    $env:BHBuildSystem = 'Local'
+}
 
 Invoke-psake $PSScriptRoot\psake.ps1 -taskList $Task -nologo
 exit ( [int]( -not $psake.build_success ) )
