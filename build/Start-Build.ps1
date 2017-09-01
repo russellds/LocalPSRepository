@@ -7,6 +7,9 @@
     $Force
 )
 
+$Environment = Get-Item ENV:
+foreach( $env in $Environment) { Write-Host "$($env.Name): $($env.Value)" }
+
 # dependencies
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 if(-not (Get-Module -ListAvailable PSDepend))
