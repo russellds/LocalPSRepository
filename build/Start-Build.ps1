@@ -7,8 +7,15 @@
     $Force
 )
 
-$Environment = Get-Item ENV: | where { $_.Name -like "APPVEYOR*" -or $_.Name -eq 'NugetApiKey' }
-foreach( $env in $Environment) { Write-Host "`$env:$($env.Name) = '$($env.Value)'" }
+$Environment = Get-Item ENV:
+foreach ($env in $Environment) { 
+    if ($env.Name -like "APPVEYOR*") {
+        Write-Host "`$env:$($env.Name) = '$($env.Value)'"
+    }
+    elseif ($env.Name -eq 'NugetApiKey') {
+        Write-Host "`$env:$($env.Name) = '$($env.Value)'"
+    }
+} 
 
 # dependencies
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
